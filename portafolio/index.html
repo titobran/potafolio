@@ -5,72 +5,146 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Brandon Stick Ramirez Hernandez - Portafolio MTM</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom, #0f172a, #0e7490);
+      background: linear-gradient(to bottom, #0f172a, #164e63);
       color: #ffffff;
     }
   </style>
 </head>
-<body class="p-4">
+<body class="p-6">
 
   <!-- Encabezado -->
-  <header class="text-center mb-10">
+  <header class="text-center mb-12">
     <h1 class="text-4xl font-bold">Brandon Stick Ramirez Hernandez</h1>
-    <p class="text-xl mt-2">Creador de <span class="text-cyan-300 font-semibold">MTM – Mar en tus Manos</span></p>
-    <p class="italic mt-1">“Conocer para proteger: tu acceso a la vida marina comienza aquí.”</p>
+    <p class="text-xl mt-2 text-cyan-300">Creador de MTM – Mar en tus Manos</p>
+    <p class="italic mt-1 text-gray-300">“Conocer para proteger: tu acceso a la vida marina comienza aquí.”</p>
   </header>
 
-  <!-- Sección del Proyecto -->
-  <section class="bg-white/10 p-6 rounded-2xl shadow-xl mb-10">
-    <h2 class="text-2xl font-bold text-cyan-300 mb-4">🌊 ¿Qué es MTM?</h2>
-    <p>
-      MTM (Mar en tus Manos) es una página web dedicada a informar y educar sobre la vida marina. Incluye datos sobre especies, amenazas, noticias, campañas de conservación y una base de datos para el estudio de fauna marina. Buscamos inspirar respeto por los océanos y facilitar el acceso a la información científica marina.
-    </p>
+  <!-- Sobre MTM -->
+  <section class="bg-white/10 p-6 rounded-xl shadow-xl mb-10">
+    <h2 class="text-2xl font-bold text-cyan-300 mb-4">🌊 Sobre el Proyecto MTM</h2>
+    <p>MTM (Mar en tus Manos) es una plataforma educativa y científica que ofrece información sobre especies marinas, amenazas ambientales, noticias oceánicas y recursos para el estudio y la conservación de la fauna marina.</p>
+    <p class="mt-2">Buscamos conectar a las personas con el océano a través del conocimiento, la ciencia y la divulgación ambiental.</p>
   </section>
 
-  <!-- Iconos Fauna Marina -->
+  <!-- Estadísticas -->
+  <section class="bg-white/10 p-6 rounded-xl shadow-xl mb-10">
+    <h2 class="text-2xl font-bold text-cyan-300 mb-4">📊 Datos de especies observadas</h2>
+    <canvas id="speciesChart" class="w-full max-w-2xl mx-auto"></canvas>
+    <script>
+      const ctx = document.getElementById('speciesChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Tiburones', 'Tortugas', 'Delfines', 'Corales', 'Medusas'],
+          datasets: [{
+            label: 'Especies Registradas',
+            data: [12, 18, 9, 15, 7],
+            backgroundColor: ['#22d3ee', '#38bdf8', '#818cf8', '#34d399', '#f472b6'],
+            borderRadius: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              display: true,
+              labels: { color: 'white' }
+            }
+          },
+          scales: {
+            x: { ticks: { color: 'white' } },
+            y: { beginAtZero: true, ticks: { color: 'white' } }
+          }
+        }
+      });
+    </script>
+  </section>
+
+  <!-- Fauna Marina -->
   <section class="mb-10">
-    <h2 class="text-2xl font-bold text-cyan-300 mb-4">🐠 Fauna marina destacada</h2>
-    <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
-      <div>
-        <img src="https://img.icons8.com/ios-filled/100/00FFFF/dolphin.png" alt="Delfín" class="mx-auto" />
-        <p>Delfín</p>
+    <h2 class="text-2xl font-bold text-cyan-300 mb-4 text-center">🐠 Fauna Marina Destacada</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-5 gap-6 text-center">
+      <div><img src="https://img.icons8.com/ios-filled/100/00FFFF/dolphin.png" alt="Delfín" class="mx-auto" /><p>Delfín</p></div>
+      <div><img src="https://img.icons8.com/ios-filled/100/00FFFF/sea-turtle.png" alt="Tortuga" class="mx-auto" /><p>Tortuga</p></div>
+      <div><img src="https://img.icons8.com/ios-filled/100/00FFFF/shark.png" alt="Tiburón" class="mx-auto" /><p>Tiburón</p></div>
+      <div><img src="https://img.icons8.com/ios-filled/100/00FFFF/jellyfish.png" alt="Medusa" class="mx-auto" /><p>Medusa</p></div>
+      <div><img src="https://img.icons8.com/ios-filled/100/00FFFF/coral.png" alt="Coral" class="mx-auto" /><p>Coral</p></div>
+    </div>
+  </section>
+
+  <!-- Explora el Océano -->
+  <section class="bg-white/10 p-6 rounded-xl shadow-xl mb-10">
+    <h2 class="text-2xl font-bold text-cyan-300 mb-4">🧭 Explora el Océano</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div class="bg-white/5 p-4 rounded-lg">
+        <h3 class="font-bold text-lg text-teal-300">🐳 Sabías que...</h3>
+        <p>Las ballenas pueden comunicarse a cientos de kilómetros de distancia usando sonidos de baja frecuencia.</p>
       </div>
-      <div>
-        <img src="https://img.icons8.com/ios-filled/100/00FFFF/sea-turtle.png" alt="Tortuga" class="mx-auto" />
-        <p>Tortuga</p>
-      </div>
-      <div>
-        <img src="https://img.icons8.com/ios-filled/100/00FFFF/shark.png" alt="Tiburón" class="mx-auto" />
-        <p>Tiburón</p>
-      </div>
-      <div>
-        <img src="https://img.icons8.com/ios-filled/100/00FFFF/jellyfish.png" alt="Medusa" class="mx-auto" />
-        <p>Medusa</p>
+      <div class="bg-white/5 p-4 rounded-lg">
+        <h3 class="font-bold text-lg text-teal-300">🐙 Curiosidad</h3>
+        <p>El pulpo tiene tres corazones y puede cambiar de color según su estado emocional.</p>
       </div>
     </div>
   </section>
 
-  <!-- Noticias y Amenazas -->
-  <section class="bg-white/10 p-6 rounded-2xl shadow-xl mb-10">
-    <h2 class="text-2xl font-bold text-cyan-300 mb-4">📰 Noticias y amenazas actuales</h2>
-    <ul class="list-disc ml-6 space-y-2">
-      <li>Incremento en las temperaturas marinas afecta arrecifes de coral.</li>
-      <li>Microplásticos encontrados en especies marinas de consumo humano.</li>
-      <li>Campañas de protección de tortugas en playas colombianas.</li>
+  <!-- Galería Marina -->
+  <section class="mb-10">
+    <h2 class="text-2xl font-bold text-cyan-300 mb-4 text-center">📸 Galería Marina</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Océano 1" class="rounded-xl shadow-xl">
+      <img src="https://images.unsplash.com/photo-1519336305162-4c519f0b14f8" alt="Tortuga marina" class="rounded-xl shadow-xl">
+      <img src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe" alt="Coral" class="rounded-xl shadow-xl">
+    </div>
+  </section>
+
+  <!-- Trivia Interactiva -->
+  <section class="bg-white/10 p-6 rounded-xl shadow-xl mb-10 text-center">
+    <h2 class="text-2xl font-bold text-cyan-300 mb-4">🎮 Trivia Rápida</h2>
+    <p class="mb-4">¿Cuál de estos animales es considerado el más inteligente del océano?</p>
+    <button onclick="alert('¡Correcto! El delfín es increíblemente inteligente.')" class="bg-cyan-600 hover:bg-cyan-800 px-4 py-2 m-2 rounded-xl">Delfín</button>
+    <button onclick="alert('No exactamente. ¡Intenta otra!')" class="bg-cyan-600 hover:bg-cyan-800 px-4 py-2 m-2 rounded-xl">Tiburón</button>
+    <button onclick="alert('Casi, pero no. ¡Sigue aprendiendo!')" class="bg-cyan-600 hover:bg-cyan-800 px-4 py-2 m-2 rounded-xl">Medusa</button>
+  </section>
+
+  <!-- Cómo ayudar -->
+  <section class="bg-white/10 p-6 rounded-xl shadow-xl mb-10">
+    <h2 class="text-2xl font-bold text-cyan-300 mb-4">🌱 ¿Cómo puedo ayudar al océano?</h2>
+    <ul class="list-disc ml-6 space-y-2 text-gray-100">
+      <li>Usa menos plástico, especialmente botellas y bolsas.</li>
+      <li>Participa en jornadas de limpieza costera o ríos locales.</li>
+      <li>Infórmate y comparte datos sobre especies en peligro.</li>
+      <li>Apoya comercios responsables con la pesca sostenible.</li>
     </ul>
   </section>
 
-  <!-- Contacto -->
-  <section class="text-center">
-    <h2 class="text-2xl font-bold text-cyan-300 mb-2">📬 Contáctame</h2>
-    <p>Email: <a href="mailto:brandon@mtm.com" class="underline text-cyan-200">brandon@mtm.com</a></p>
-    <p>Instagram: <a href="https://instagram.com/mtm" class="underline text-cyan-200">@mtm</a></p>
+  <!-- Frase del día -->
+  <section class="text-center p-6 bg-white/5 rounded-xl shadow-xl mb-10">
+    <h2 class="text-2xl font-bold text-cyan-300 mb-2">📜 Frase del día</h2>
+    <p id="dailyQuote" class="italic text-gray-200"></p>
   </section>
+
+  <!-- Contacto -->
+  <section class="text-center bg-white/10 p-6 rounded-xl shadow-xl">
+    <h2 class="text-2xl font-bold text-cyan-300 mb-2">📬 Contáctame</h2>
+    <p class="text-gray-100">📧 Email: <a href="mailto:brandon@mtm.com" class="underline text-cyan-200">brandon@mtm.com</a></p>
+    <p class="text-gray-100">📱 WhatsApp: <a href="https://wa.me/573001112233" class="underline text-cyan-200">+57 300 111 2233</a></p>
+    <p class="text-gray-100">🌐 Instagram: <a href="https://instagram.com/mtm" class="underline text-cyan-200">@mtm</a></p>
+  </section>
+
+  <script>
+    const frases = [
+      "“El océano es el corazón del planeta.” – Sylvia Earle",
+      "“La protección de los mares comienza con el conocimiento.”",
+      "“Cada gota cuenta para un mar más limpio.”",
+      "“Sin azul, no hay verde.” – Sylvia Earle"
+    ];
+    document.getElementById('dailyQuote').innerText = frases[Math.floor(Math.random() * frases.length)];
+  </script>
 
 </body>
 </html>
