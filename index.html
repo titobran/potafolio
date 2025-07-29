@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulacro ICFES Marino</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #87ceeb, #1e90ff);
+      background-image: url('https://i.imgur.com/1JYzPQd.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      padding: 1rem;
+      font-size: 2rem;
+      background-color: rgba(0, 0, 128, 0.6);
+      border-bottom: 4px solid #00ffff;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: rgba(0, 0, 64, 0.7);
+      border-radius: 15px;
+    }
+
+    .question {
+      margin-bottom: 2rem;
+    }
+
+    .question h3 {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: block;
+      padding: 0.5rem;
+      background-color: rgba(255,255,255,0.1);
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    label:hover {
+      background-color: rgba(0, 255, 255, 0.3);
+    }
+
+    button {
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 10px;
+      background-color: #00cccc;
+      font-weight: bold;
+      color: #003;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #00ffff;
+    }
+
+    .result {
+      margin-top: 2rem;
+      background-color: rgba(0,0,0,0.4);
+      padding: 1rem;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: rgba(0,0,50,0.5);
+      color: white;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>🌊 Simulacro ICFES Marino 🌊</header>
+
+  <div class="container">
+    <form id="quizForm">
+      <div class="question">
+        <h3>1. ¿Cuál es la capital de Colombia?</h3>
+        <label><input type="radio" name="q1" value="a"> Medellín</label>
+        <label><input type="radio" name="q1" value="b"> Bogotá</label>
+        <label><input type="radio" name="q1" value="c"> Cali</label>
+        <label><input type="radio" name="q1" value="d"> Cartagena</label>
+      </div>
+
+      <div class="question">
+        <h3>2. ¿Qué resultado da 2 + 2 x 3?</h3>
+        <label><input type="radio" name="q2" value="a"> 12</label>
+        <label><input type="radio" name="q2" value="b"> 10</label>
+        <label><input type="radio" name="q2" value="c"> 8</label>
+        <label><input type="radio" name="q2" value="d"> 6</label>
+      </div>
+
+      <div class="question">
+        <h3>3. ¿Qué océano baña las costas del Pacífico colombiano?</h3>
+        <label><input type="radio" name="q3" value="a"> Atlántico</label>
+        <label><input type="radio" name="q3" value="b"> Índico</label>
+        <label><input type="radio" name="q3" value="c"> Pacífico</label>
+        <label><input type="radio" name="q3" value="d"> Ártico</label>
+      </div>
+
+      <button type="button" onclick="checkAnswers()">Enviar</button>
+    </form>
+
+    <div class="result" id="resultBox" style="display:none;">
+      <h3>Resultados</h3>
+      <p id="correct">Respuestas Correctas: 0</p>
+      <p id="incorrect">Respuestas Incorrectas: 0</p>
+      <p id="percent">Porcentaje: 0%</p>
+      <button onclick="location.reload()">Jugar de Nuevo</button>
+    </div>
+  </div>
+
+  <footer>Hecho con 💙 y pasión por el océano</footer>
+
+  <script>
+    function checkAnswers() {
+      const answers = {
+        q1: "b",
+        q2: "c",
+        q3: "c"
+      };
+
+      let correct = 0;
+      let total = Object.keys(answers).length;
+
+      for (let q in answers) {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === answers[q]) {
+          correct++;
+        }
+      }
+
+      const incorrect = total - correct;
+      const percent = Math.round((correct / total) * 100);
+
+      document.getElementById("correct").textContent = `Respuestas Correctas: ${correct}`;
+      document.getElementById("incorrect").textContent = `Respuestas Incorrectas: ${incorrect}`;
+      document.getElementById("percent").textContent = `Porcentaje: ${percent}%`;
+      document.getElementById("resultBox").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
