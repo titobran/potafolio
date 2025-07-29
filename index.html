@@ -1,93 +1,160 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portafolio | Brandon Ramírez</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Simulacro ICFES Marino</title>
   <style>
     body {
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      font-family: 'Rubik', sans-serif;
-      background: linear-gradient(to bottom right, #004e92, #000428);
+      padding: 0;
+      background: linear-gradient(to bottom, #87ceeb, #1e90ff);
+      background-image: url('https://i.imgur.com/1JYzPQd.jpg');
+      background-size: cover;
+      background-attachment: fixed;
       color: white;
-      line-height: 1.6;
     }
+
     header {
-      background: rgba(0, 0, 0, 0.3);
-      padding: 40px 20px;
       text-align: center;
+      padding: 1rem;
+      font-size: 2rem;
+      background-color: rgba(0, 0, 128, 0.6);
+      border-bottom: 4px solid #00ffff;
     }
-    header h1 {
-      font-size: 3em;
-      margin: 0;
+
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: rgba(0, 0, 64, 0.7);
+      border-radius: 15px;
     }
-    header p {
-      font-size: 1.2em;
-      color: #b0e0ff;
+
+    .question {
+      margin-bottom: 2rem;
     }
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
+
+    .question h3 {
+      margin-bottom: 1rem;
     }
-    h2 {
-      color: #00bfff;
-      margin-top: 40px;
+
+    label {
+      display: block;
+      padding: 0.5rem;
+      background-color: rgba(255,255,255,0.1);
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      transition: 0.3s ease;
     }
-    .highlight {
-      color: #ffde59;
+
+    label:hover {
+      background-color: rgba(0, 255, 255, 0.3);
     }
+
+    button {
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 10px;
+      background-color: #00cccc;
+      font-weight: bold;
+      color: #003;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #00ffff;
+    }
+
+    .result {
+      margin-top: 2rem;
+      background-color: rgba(0,0,0,0.4);
+      padding: 1rem;
+      border-radius: 10px;
+    }
+
     footer {
       text-align: center;
-      padding: 20px;
-      background-color: rgba(0, 0, 0, 0.2);
-      font-size: 0.9em;
-      color: #aaa;
+      padding: 1rem;
+      background-color: rgba(0,0,50,0.5);
+      color: white;
+      margin-top: 3rem;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Brandon Ramírez</h1>
-    <p>Analista de Datos | Programador | Creativo con Propósito</p>
-  </header>
 
-  <section>
-    <h2>🌟 Sobre mí</h2>
-    <p>
-      ¡Hola! Soy <span class="highlight">una persona activa, deportista y con una mentalidad de mejora constante</span>. Me apasiona aprender, crear y ayudar. Combino la lógica de la programación con la empatía de un comunicador, buscando siempre el equilibrio entre lo técnico y lo humano.
-    </p>
-    <p>
-      Disfruto del deporte tanto como de resolver problemas con código. La disciplina y el compromiso que aplico en cada entrenamiento físico también lo traslado a mis proyectos tecnológicos y de datos.
-    </p>
-    <p>
-      Creo firmemente que <strong>la tecnología debe ser inclusiva, ética y útil</strong>. Por eso, desarrollo herramientas que aportan valor real a quienes enfrentan dificultades, ya sea por desconocimiento, limitaciones o falta de acceso.
-    </p>
-  </section>
+  <header>🌊 Simulacro ICFES Marino 🌊</header>
 
-  <section>
-    <h2>💡 ¿Qué hago?</h2>
-    <ul>
-      <li>💻 Desarrollo páginas web y herramientas interactivas con enfoque educativo y social.</li>
-      <li>📊 Analizo datos para generar soluciones basadas en evidencia y visualizaciones claras.</li>
-      <li>🎯 Investigo y aplico nuevas tecnologías para mejorar procesos y experiencias digitales.</li>
-      <li>🏃‍♂️ Promuevo el deporte y la salud mental como pilares fundamentales para el rendimiento.</li>
-    </ul>
-  </section>
+  <div class="container">
+    <form id="quizForm">
+      <div class="question">
+        <h3>1. ¿Cuál es la capital de Colombia?</h3>
+        <label><input type="radio" name="q1" value="a"> Medellín</label>
+        <label><input type="radio" name="q1" value="b"> Bogotá</label>
+        <label><input type="radio" name="q1" value="c"> Cali</label>
+        <label><input type="radio" name="q1" value="d"> Cartagena</label>
+      </div>
 
-  <section>
-    <h2>🚀 ¿Por qué lo hago?</h2>
-    <p>
-      Porque creo en una tecnología que sirva a las personas, que sea <strong>didáctica, innovadora y humana</strong>. Me encanta compartir lo que sé, trabajar en equipo y liderar proyectos que tengan un impacto positivo en mi comunidad.
-    </p>
-    <p>
-      Si estás buscando a alguien que mezcle <span class="highlight">pasión, técnica y propósito</span>, ¡conversemos!
-    </p>
-  </section>
+      <div class="question">
+        <h3>2. ¿Qué resultado da 2 + 2 x 3?</h3>
+        <label><input type="radio" name="q2" value="a"> 12</label>
+        <label><input type="radio" name="q2" value="b"> 10</label>
+        <label><input type="radio" name="q2" value="c"> 8</label>
+        <label><input type="radio" name="q2" value="d"> 6</label>
+      </div>
 
-  <footer>
-    © 2025 Brandon Ramírez | portafolio personal
-  </footer>
+      <div class="question">
+        <h3>3. ¿Qué océano baña las costas del Pacífico colombiano?</h3>
+        <label><input type="radio" name="q3" value="a"> Atlántico</label>
+        <label><input type="radio" name="q3" value="b"> Índico</label>
+        <label><input type="radio" name="q3" value="c"> Pacífico</label>
+        <label><input type="radio" name="q3" value="d"> Ártico</label>
+      </div>
+
+      <button type="button" onclick="checkAnswers()">Enviar</button>
+    </form>
+
+    <div class="result" id="resultBox" style="display:none;">
+      <h3>Resultados</h3>
+      <p id="correct">Respuestas Correctas: 0</p>
+      <p id="incorrect">Respuestas Incorrectas: 0</p>
+      <p id="percent">Porcentaje: 0%</p>
+      <button onclick="location.reload()">Jugar de Nuevo</button>
+    </div>
+  </div>
+
+  <footer>Hecho con 💙 y pasión por el océano</footer>
+
+  <script>
+    function checkAnswers() {
+      const answers = {
+        q1: "b",
+        q2: "c",
+        q3: "c"
+      };
+
+      let correct = 0;
+      let total = Object.keys(answers).length;
+
+      for (let q in answers) {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === answers[q]) {
+          correct++;
+        }
+      }
+
+      const incorrect = total - correct;
+      const percent = Math.round((correct / total) * 100);
+
+      document.getElementById("correct").textContent = `Respuestas Correctas: ${correct}`;
+      document.getElementById("incorrect").textContent = `Respuestas Incorrectas: ${incorrect}`;
+      document.getElementById("percent").textContent = `Porcentaje: ${percent}%`;
+      document.getElementById("resultBox").style.display = "block";
+    }
+  </script>
+
 </body>
 </html>
+
